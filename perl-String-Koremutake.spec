@@ -1,7 +1,7 @@
 %define realname String-Koremutake
 %define name perl-%{realname}
 %define version 0.30
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary:	Convert to/from Koremutake Memorable Random Strings
 Name:		%{name}
@@ -33,6 +33,8 @@ that don't have any conventional sense, but can be used as random identifiers.
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %{__make}
+
+%check
 %{__make} test
 
 %install
