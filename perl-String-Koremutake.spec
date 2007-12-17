@@ -17,7 +17,6 @@ Buildrequires:perl-devel
 BuildRequires:	perl-Test-Exception
 BuildRequires:  perl-Error
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 The String::Koremutake module converts to and from Koremutake Memorable Random
