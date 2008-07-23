@@ -1,7 +1,7 @@
 %define realname String-Koremutake
 %define name perl-%{realname}
 %define version 0.30
-%define release %mkrel 4
+%define release %mkrel 6
 
 Summary:	Convert to/from Koremutake Memorable Random Strings
 Name:		%{name}
