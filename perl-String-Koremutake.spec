@@ -1,9 +1,9 @@
 %define upstream_name    String-Koremutake
 %define upstream_version 0.30
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
 Summary:	Convert to/from Koremutake Memorable Random Strings
 License:	Artistic/GPL
@@ -11,13 +11,10 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	http://search.cpan.org/CPAN/authors/id/L/LB/LBROCARD/%{upstream_name}-%{upstream_version}.tar.bz2
 
-%if %{mdkversion} < 1010
-Buildrequires:perl-devel
-%endif
-BuildRequires:	perl-Test-Exception
-BuildRequires:  perl-Error
+BuildRequires:	perl-devel
+BuildRequires:	perl(Test::Exception)
+BuildRequires:  perl(Error)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The String::Koremutake module converts to and from Koremutake Memorable Random
@@ -31,21 +28,44 @@ that don't have any conventional sense, but can be used as random identifiers.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%{__make}
+perl Makefile.PL INSTALLDIRS=vendor
+make
 
 %check
-%{__make} test
+make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root)
 %doc README CHANGES
 %{perl_vendorlib}/String/*
 %{_mandir}/*/*
+
+%changelog
+* Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.300.0-1mdv2010.0
++ Revision: 404417
+- rebuild using %%perl_convert_version
+
+* Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.30-6mdv2009.0
++ Revision: 241908
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Mon May 07 2007 Olivier Thauvin <nanardon@mandriva.org> 0.30-4mdv2008.0
++ Revision: 23890
+- rebuild
+
+
+* Thu Sep 29 2005 Nicolas Lécureuil <neoclust@mandriva.org> 0.30-3mdk
+- BuildRequires
+
+* Wed May 04 2005 Rafael Garcia-Suarez <rgarciasuarez@mandriva.com> 0.30-2mdk
+- BuildRequires
+
+* Wed May 04 2005 Rafael Garcia-Suarez <rgarciasuarez@mandriva.com> 0.30-1mdk
+- First Mandriva release
+
