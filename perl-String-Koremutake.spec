@@ -8,7 +8,7 @@ Release:	4
 Summary:	Convert to/from Koremutake Memorable Random Strings
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}/
+Url:		https://search.cpan.org/dist/%{upstream_name}/
 Source0:	http://search.cpan.org/CPAN/authors/id/L/LB/LBROCARD/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel
