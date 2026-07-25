@@ -2,14 +2,14 @@
 %define upstream_version 0.30
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 
 Summary:	Convert to/from Koremutake Memorable Random Strings
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://search.cpan.org/CPAN/authors/id/L/LB/LBROCARD/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/String-Koremutake
+Source0:	https://cpan.metacpan.org/authors/id/L/LB/LBROCARD/String-Koremutake-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
