@@ -1,15 +1,13 @@
 %define upstream_name    String-Koremutake
-%define upstream_version 0.30
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.30
+Release:	6
 
 Summary:	Convert to/from Koremutake Memorable Random Strings
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/String-Koremutake
-Source0:	https://cpan.metacpan.org/authors/id/L/LB/LBROCARD/String-Koremutake-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/L/LB/LBROCARD/String-Koremutake-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -26,7 +24,7 @@ for those strings like dopynl, glargen, glonknic, spoopwiddle, and kebble etc.
 that don't have any conventional sense, but can be used as random identifiers.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -46,9 +44,7 @@ make test
 %changelog
 * Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.300.0-1mdv2010.0
 + Revision: 404417
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.30-6mdv2009.0
+- rebuild using %0.30 Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.30-6mdv2009.0
 + Revision: 241908
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
