@@ -2,7 +2,7 @@
 %define upstream_version 0.30
 Name:		perl-%{upstream_name}
 Version:	0.30
-Release:	2
+Release:	3
 
 Summary:	Convert to/from Koremutake Memorable Random Strings
 License:	Artistic/GPL
